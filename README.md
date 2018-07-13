@@ -10,12 +10,12 @@ npm i tailwind-colors-vars
 #### `colorVars({ colors, strategy = 'override', colorTransform } = {})`
 Creates tailwind plugin that registers colors from config as css vars.
 
-_`colors`_: [optional] an object with colors to extend, replace or override config colors  </br>
-_`strategy`_: [optional] string:</br>
-- `extend`_: will merge config colors with given colors, config ones will take priority</br>
-- `override`_: will merge config colors with given colors, given ones will take priority</br>
-- `replace`_: will discard config colors and only use given ones</br>
-_`colorTransform`_: [optional] Function that will be invoked on every color value before injection</br>
+- _`colors`_: [optional] an object with colors to extend, replace or override config colors  </br>
+- _`strategy`_: [optional] string:</br>
+  - `extend`_: will merge config colors with given colors, config ones will take priority</br>
+  - `override`_: will merge config colors with given colors, given ones will take priority</br>
+  - `replace`_: will discard config colors and only use given ones</br>
+- _`colorTransform`_: [optional] Function that will be invoked on every color value before injection</br>
 
 ## Usage
 In tailwind config
