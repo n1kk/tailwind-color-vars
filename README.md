@@ -66,7 +66,7 @@ This will produce:
 To process every color value before injection you can specify `colorTransform`. For example you can transform all values to a set value type:
 ```javascript
 const colorVars = require('tailwind-color-vars')
-tinycolor = require("tinycolor2");
+const tinycolor = require("tinycolor2");
 module.exports = {
   plugins: [
     colorVars({
