@@ -18,7 +18,6 @@ module.exports = function colorVars({ colors, strategy = 'override', colorTransf
     names.forEach(col => {
       root[`--${e(col)}`] = colorTransform ? colorTransform(colors[col]) : colors[col]
     })
-    console.log({css})
     addComponents(css)
   }
 }
