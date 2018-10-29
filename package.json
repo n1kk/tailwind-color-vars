@@ -1,6 +1,6 @@
 {
   "name": "tailwind-color-vars",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tailwind plugin to generate css vars '--color-name' for colors list.",
   "main": "index.js",
   "repository": {
