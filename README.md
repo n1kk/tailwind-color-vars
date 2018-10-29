@@ -2,7 +2,9 @@ This plugin generates a set of css vars from tailwinds colors list and puts then
 
 ## Install
 ```bash
-npm i tailwind-colors-vars
+yarn add tailwind-color-vars
+# or
+npm i tailwind-color-vars
 ```
 
 ## API
