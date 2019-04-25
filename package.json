@@ -9,6 +9,13 @@
   },
   "scripts": {},
   "author": "n1kk",
-  "keywords": ["tailwindcss", "tailwind", "plugin", "colors", "css variables", "css vars"],
+  "keywords": [
+    "tailwindcss",
+    "tailwind",
+    "plugin",
+    "colors",
+    "css variables",
+    "css vars"
+  ],
   "license": "MIT"
 }

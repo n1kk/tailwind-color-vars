@@ -1,23 +1,26 @@
-module.exports = function colorVars({ colors, strategy = 'override', colorTransform } = {}) {
-  return function tailwindColorVarsPlugin({ addUtilities, addComponents, e, prefix, config }) {
+module.exports = function ({
+  colors,
+  strategy = 'override',
+  colorTransform = (color) => color,
+} = {}) {
+  return function ({ addComponents, e, config }) {
     if (colors && typeof colors === 'object') {
       if (strategy === 'override') {
-        colors = Object.assign({}, config('colors'), colors)
+        colors = Object.assign({}, config('theme.colors'), colors)
       } else if (strategy === 'replace') {
-        //colors = colors
+        colors = colors
       } else if (strategy === 'extend') {
-        colors = Object.assign({}, colors, config('colors'))
+        colors = Object.assign({}, colors, config('theme.colors'))
       }
     } else {
-      colors = config('colors')
+      colors = config('theme.colors')
     }
-    let names = Object.keys(colors)
-    let root = {}, css = {
-      ':root': root,
-    }
-    names.forEach(col => {
-      root[`--${e(col)}`] = colorTransform ? colorTransform(colors[col]) : colors[col]
+
+    let root = {}
+    Object.keys(colors).forEach(colorKey => {
+      root[`--${e(colorKey)}`] = colorTransform(colors[colorKey])
     })
-    addComponents(css)
+
+    addComponents({ ':root': root })
   }
 }
