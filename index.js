@@ -4,16 +4,18 @@ module.exports = function ({
   colorTransform = (color) => color,
 } = {}) {
   return function ({ addComponents, e, config }) {
+    const configColors = config('theme.colors', config('colors'))
+
     if (colors && typeof colors === 'object') {
       if (strategy === 'override') {
-        colors = Object.assign({}, config('theme.colors'), colors)
+        colors = Object.assign({}, configColors, colors)
       } else if (strategy === 'replace') {
         colors = colors
       } else if (strategy === 'extend') {
-        colors = Object.assign({}, colors, config('theme.colors'))
+        colors = Object.assign({}, colors, configColors)
       }
     } else {
-      colors = config('theme.colors')
+      colors = configColors
     }
 
     let root = {}
